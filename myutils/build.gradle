@@ -66,6 +66,8 @@ dependencies {
     api "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     api "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
     api "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
+    //标签布局
+    api 'com.zhy:flowlayout-lib:1.0.3'
 }
 
 
