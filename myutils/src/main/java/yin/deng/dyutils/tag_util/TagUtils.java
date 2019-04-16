@@ -34,6 +34,15 @@ public class TagUtils {
     }
 
     /**
+     * 设置最大可选择标签个数 -1则不设置上限（默认）
+     * @param tagFlowLayout
+     * @param maxNum
+     */
+    public void setMaxSlectedTagNum(TagFlowLayout tagFlowLayout,int maxNum){
+        tagFlowLayout.setMaxSelectCount(maxNum);
+    }
+
+    /**
      *
      * @param tagFlowLayout
      * @param tabRootView tab根view
