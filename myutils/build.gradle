@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-
+def dbflow_version = "4.1.2"
 android {
     compileSdkVersion 27
     buildToolsVersion '28.0.3'
@@ -61,6 +61,11 @@ dependencies {
     //新增tablayout框架布局
     api 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
     api 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
+    //数据库
+    annotationProcessor  "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    api "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
+    api "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
+    api "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
 }
 
 

@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 
+import com.raizlabs.android.dbflow.config.FlowManager;
 import com.tencent.smtt.export.external.TbsCoreSettings;
 import com.tencent.smtt.sdk.QbSdk;
 
@@ -54,6 +55,7 @@ public class SuperBaseApp extends Application {
         app=this;
         initX5();
         httpUtils=MyHttpUtils.init(this);
+        FlowManager.init(this);
     }
 
     private void initCrashHandler() {

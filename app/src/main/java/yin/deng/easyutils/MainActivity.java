@@ -12,7 +12,6 @@ import com.ogaclejapan.smarttablayout.SmartTabLayout;
 import androidx.viewpager.widget.ViewPager;
 import yin.deng.dyutils.base.SuperSuperBaseActivity;
 import yin.deng.dyutils.http.BaseHttpInfo;
-import yin.deng.dyutils.tab_layout.TabUtils;
 
 public class MainActivity extends SuperSuperBaseActivity implements View.OnClickListener {
 
@@ -43,9 +42,7 @@ public class MainActivity extends SuperSuperBaseActivity implements View.OnClick
 
     @Override
     protected void initFirst() {
-        TabUtils utils = TabUtils.getInstance(MyPageFragment.class, getResources().getColor(R.color.black), getResources().getColor(R.color.re_2));
-        String[] names = new String[]{"第一个", "第二个", "第三个", "第四个", "第五个"};
-//        utils.initPageFg(hm_tab_layout, viewpager, this, names, getSupportFragmentManager());
+
     }
 
 

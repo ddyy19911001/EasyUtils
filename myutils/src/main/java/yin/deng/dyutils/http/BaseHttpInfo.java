@@ -1,6 +1,7 @@
 package yin.deng.dyutils.http;
 
 import com.lzy.okgo.model.HttpParams;
+import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -11,7 +12,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2019/3/29 0029.
  */
-public class BaseHttpInfo implements Serializable {
+public class BaseHttpInfo extends BaseModel implements Serializable {
     private String _baseRequestUrl;
     private List<HttpParams> _baseParams=new ArrayList<>();
     private Map<String,String> _baseMapParams=new HashMap<>();
