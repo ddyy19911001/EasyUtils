@@ -197,7 +197,10 @@ public abstract class SuperViewPagerSuperBaseFragment<T> extends Fragment implem
     }
 
     public MyHttpUtils getHttpUtils() {
-        return SuperBaseApp.app.getHttpUtils();
+        if(httpUtils==null){
+            httpUtils=new MyHttpUtils(getActivity().getApplication());
+        }
+        return httpUtils;
     }
 
 

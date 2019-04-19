@@ -131,7 +131,10 @@ public abstract class SuperSuperBaseActivity<T> extends AppCompatActivity implem
 
 
     public MyHttpUtils getHttpUtils() {
-        return SuperBaseApp.app.getHttpUtils();
+        if(httpUtils==null){
+            httpUtils=new MyHttpUtils(getApplication());
+        }
+        return httpUtils;
     }
 
 

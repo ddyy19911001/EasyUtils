@@ -1,34 +1,18 @@
 package yin.deng.easyutils;
 
-import android.os.Bundle;
+import android.Manifest;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.ogaclejapan.smarttablayout.SmartTabLayout;
-
-import androidx.viewpager.widget.ViewPager;
 import yin.deng.dyutils.base.SuperSuperBaseActivity;
 import yin.deng.dyutils.http.BaseHttpInfo;
+import yin.deng.dyutils.utils.LogUtils;
+import yin.deng.dyutils.utils.NoDoubleClickListener;
 
-public class MainActivity extends SuperSuperBaseActivity implements View.OnClickListener {
+public class MainActivity extends SuperSuperBaseActivity {
 
 
-    private ImageView iv_left;
-    private TextView tv_left;
-    private FrameLayout fm_left;
-    private TextView tvTitle;
-    private ImageView iv_right;
-    private TextView tv_right;
-    private FrameLayout fm_right;
-    private LinearLayout title_bar;
-    private TextView tv_line_title;
-    private LinearLayout ll_title_root;
-    private SmartTabLayout hm_tab_layout;
-    private TextView tv_line_tab;
-    private ViewPager viewpager;
+    private TextView tvContent;
 
     @Override
     public int setLayout() {
@@ -42,46 +26,27 @@ public class MainActivity extends SuperSuperBaseActivity implements View.OnClick
 
     @Override
     protected void initFirst() {
-
+        initView();
+        String []permisions={Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
+        requestRunTimePermission(permisions,this);
     }
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        // TODO:OnCreate Method has been created, run FindViewById again to generate code
-        setContentView(R.layout.activity_main);
-        initView();
+    public void onGranted() {
+        LogUtils.i("授权成功");
+        tvContent.setOnClickListener(new NoDoubleClickListener() {
+            @Override
+            protected void onNoDoubleClick(View v) {
+                getHttpUtils().download("http://p.gdown.baidu.com/50b689a32183224df9c41613d13be2c7cd0bb79bfa82410927aef40074893fb4183e5d14eb4135930e6441693b5502c7ce6774473a9fcfe3b9f14925aa7018a8ddc9c9fb09708a598d09d4cfadfcf9ac9388039d0d8387c752651f73c5d0e634e3aca94aeb14952cb5831b0a554f2803266ee20c0802107e2950af6e47c5119a0cc9f936c3a6e00a71f0e667f4ebb5dc92b48beff16d6c0b75302946e5741763be32b4a1df43ce9ee5a320716d893ef1","qq.apk");
+            }
+        });
     }
+
+
 
     private void initView() {
-        iv_left = (ImageView) findViewById(R.id.iv_left);
-        tv_left = (TextView) findViewById(R.id.tv_left);
-        fm_left = (FrameLayout) findViewById(R.id.fm_left);
-        tvTitle = (TextView) findViewById(R.id.tvTitle);
-        iv_right = (ImageView) findViewById(R.id.iv_right);
-        tv_right = (TextView) findViewById(R.id.tv_right);
-        fm_right = (FrameLayout) findViewById(R.id.fm_right);
-        title_bar = (LinearLayout) findViewById(R.id.title_bar);
-        tv_line_title = (TextView) findViewById(R.id.tv_line_title);
-        ll_title_root = (LinearLayout) findViewById(R.id.ll_title_root);
-        hm_tab_layout = (SmartTabLayout) findViewById(R.id.hm_tab_layout);
-        tv_line_tab = (TextView) findViewById(R.id.tv_line_tab);
-        viewpager = (ViewPager) findViewById(R.id.viewpager);
-
-        fm_left.setOnClickListener(this);
-        fm_right.setOnClickListener(this);
+        tvContent = (TextView) findViewById(R.id.tv_content);
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.fm_left:
-
-                break;
-            case R.id.fm_right:
-
-                break;
-        }
-    }
 }

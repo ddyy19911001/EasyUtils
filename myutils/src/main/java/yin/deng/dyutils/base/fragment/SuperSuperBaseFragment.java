@@ -190,7 +190,10 @@ public abstract class SuperSuperBaseFragment<T> extends Fragment implements Supe
 
 
     public MyHttpUtils getHttpUtils() {
-        return SuperBaseApp.app.getHttpUtils();
+        if(httpUtils==null){
+            httpUtils=new MyHttpUtils(getActivity().getApplication());
+        }
+        return httpUtils;
     }
 
 

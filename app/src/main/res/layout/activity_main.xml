@@ -10,8 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         layout="@layout/title"></include>
-   <include
-       android:layout_height="match_parent"
-       android:layout_width="match_parent"
-       layout="@layout/default_smart_tab_layout"></include>
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>

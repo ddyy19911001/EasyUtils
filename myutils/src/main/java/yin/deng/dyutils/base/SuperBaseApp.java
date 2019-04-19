@@ -24,7 +24,6 @@ import javax.net.ssl.X509TrustManager;
 
 import yin.deng.dyutils.R;
 import yin.deng.dyutils.appUtil.CrashHandlerUtil;
-import yin.deng.dyutils.http.MyHttpUtils;
 import yin.deng.dyutils.refresh.SmartRefreshLayout;
 import yin.deng.dyutils.refresh.api.DefaultRefreshFooterCreater;
 import yin.deng.dyutils.refresh.api.DefaultRefreshHeaderCreater;
@@ -44,7 +43,6 @@ import yin.deng.dyutils.view.MyHeaderView;
 public class SuperBaseApp extends Application {
     public static SuperBaseApp app;
     private SharedPreferenceUtil sharedPreferenceUtil;
-    private MyHttpUtils httpUtils;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -54,7 +52,6 @@ public class SuperBaseApp extends Application {
         initCrashHandler();
         app=this;
         initX5();
-        httpUtils=MyHttpUtils.init(this);
         FlowManager.init(this);
     }
 
@@ -65,12 +62,6 @@ public class SuperBaseApp extends Application {
         crashHandlerUtil.setCrashTip("程序异常，即将退出");
     }
 
-    public MyHttpUtils getHttpUtils() {
-        if(httpUtils==null){
-            httpUtils=MyHttpUtils.init(this);
-        }
-        return httpUtils;
-    }
 
 
     private void initX5() {
