@@ -23,7 +23,7 @@ Add it in your root build.gradle at the end of repositories:
 # Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.ddyy19911001:EasyUtils:1.0.2'
+	        implementation 'com.github.ddyy19911001:EasyUtils:1.0.3'
 	}
 # Step 3. add bottom in gradle.properties
 
@@ -71,11 +71,11 @@ Add it in your root build.gradle at the end of repositories:
 
 打开源码查看，有各自功能的分包
 
-主要用到的有SuperSuperBaseActivity/SuperBaseFragment/SuperBaseApp这三个需要被继承(加入泛型便于使用刷新和加载功能)
+主要用到的有SuperBaseActivity/SuperBaseFragment/SuperBaseApp这三个需要被继承(加入泛型便于使用刷新和加载功能)
 
 请求只需getHttpUtils（Bean类需要继承BaseHttpInfo）
 
-请求权限（继承SuperSuperBaseActivity）requestRunTimePermission
+请求权限（继承SuperBaseActivity）requestRunTimePermission
 
 需要使用x5webview将id设置为x5web_view（可以直接include一个default的x5webview）
 
@@ -117,4 +117,5 @@ ScreenUtils用于做屏幕分辨率和键盘弹出收回操作
 
 CircleImageView显示圆形图片
 
+JsoupUtils可以直接获取到Doctment
 
