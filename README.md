@@ -64,7 +64,6 @@ Add it in your root build.gradle at the end of repositories:
  	   pickFirst 'lib/armeabi-v7a/librsjni_androidx.so'
  	   pickFirst 'lib/x86/librsjni_androidx.so'
  	   pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
-	}
 	
 	}	
 
