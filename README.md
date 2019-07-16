@@ -105,6 +105,16 @@ TagUtils配合布局上面用default_tag_layout,获取其中的TagFlowLayout再�
 
 SnakeBarUtils和ToastUtils都可以显示消息
 
+BottomNavigationUtils首页底部的几个按钮，快速创建底部菜单（在布局文件中可以使用default_navigation_layout）
 
+RecycleViewScrollDistanceUtils这个工具可以用来计算RecycleView的滑动距离便于做一些头部布局的隐藏和显示操
+
+MyUtils可以用于验证空和显示吐司和显示加载中的转圈动
+
+NetUtils用于做网络状态判断
+
+ScreenUtils用于做屏幕分辨率和键盘弹出收回操作
+
+CircleImageView显示圆形图片
 
 
