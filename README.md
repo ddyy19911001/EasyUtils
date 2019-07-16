@@ -46,9 +46,10 @@ Add it in your root build.gradle at the end of repositories:
         //dialog框架需要添加这两句
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
-	}	
-
-
+	
+	....
+	
+	
 	//去除so包冲突
 	packagingOptions {//加上这些代码
   	   pickFirst 'lib/armeabi-v7a/libRSSupport.so'
@@ -64,3 +65,8 @@ Add it in your root build.gradle at the end of repositories:
  	   pickFirst 'lib/x86/librsjni_androidx.so'
  	   pickFirst 'lib/arm64-v8a/librsjni_androidx.so'
 	}
+	
+	}	
+
+
+
