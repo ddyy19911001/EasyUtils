@@ -51,7 +51,7 @@ Add it in your root build.gradle at the end of repositories:
 	
 	
 	//去除so包冲突
-	packagingOptions {//加上这些代码
+	packagingOptions {
   	   pickFirst 'lib/armeabi-v7a/libRSSupport.so'
    	   pickFirst 'lib/arm64-v8a/libRSSupport.so'
   	   pickFirst 'lib/x86_64/libRSSupport.so'
