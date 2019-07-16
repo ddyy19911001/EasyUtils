@@ -51,7 +51,7 @@ public class JsoupUtils {
                     }else {
                         document=connection.post();
                     }
-                    LogUtils.i("OnDoctmentGet:+\n"+document.toString());
+                    LogUtils.i("OnDoctmentGet:+\n"+document);
                     if(onDataGetListener!=null){
                         context.runOnUiThread(new Runnable() {
                             @Override
@@ -94,7 +94,7 @@ public class JsoupUtils {
                     }
                     final Document document;
                     document=connection.get();
-                    LogUtils.i("OnDoctmentGet:+\n"+document.toString());
+                    LogUtils.i("OnDoctmentGet:+\n"+document);
                     if(onDataGetListener!=null){
                         context.runOnUiThread(new Runnable() {
                             @Override
@@ -127,7 +127,7 @@ public class JsoupUtils {
                     connection.timeout(TIME_OUT_SECONDE);
                     final Document document;
                     document=connection.get();
-                    LogUtils.i("OnDoctmentGet:+\n"+document.toString());
+                    LogUtils.i("OnDoctmentGet:+\n"+document);
                     if(onDataGetListener!=null){
                         context.runOnUiThread(new Runnable() {
                             @Override
@@ -174,7 +174,7 @@ public class JsoupUtils {
                     }else {
                         document=connection.post();
                     }
-                    LogUtils.i("OnDoctmentGet:+\n"+document.toString());
+                    LogUtils.i("OnDoctmentGet:+\n"+document);
                     if(onDataGetListener!=null){
                         context.runOnUiThread(new Runnable() {
                             @Override
@@ -220,7 +220,7 @@ public class JsoupUtils {
                     }else {
                         document=connection.post();
                     }
-                    LogUtils.i("OnDoctmentGet:+\n"+document.toString());
+                    LogUtils.i("OnDoctmentGet:+\n"+document);
                     if(onDataGetListener!=null){
                         context.runOnUiThread(new Runnable() {
                             @Override
