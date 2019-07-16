@@ -11,7 +11,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import yin.deng.dyutils.dialogAndNitifycation.DialogUtils;
+import yin.deng.dyutils.dialog_notifycation.DialogUtils;
 import yin.deng.dyutils.permission.PermissionPageUtils;
 
 /**

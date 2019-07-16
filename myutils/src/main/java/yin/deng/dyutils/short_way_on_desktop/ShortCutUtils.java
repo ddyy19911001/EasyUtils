@@ -1,4 +1,4 @@
-package yin.deng.dyutils.shortWayOnDeskTop;
+package yin.deng.dyutils.short_way_on_desktop;
 
 import android.app.Activity;
 import android.content.ComponentName;

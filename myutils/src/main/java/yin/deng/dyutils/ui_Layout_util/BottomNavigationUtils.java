@@ -1,4 +1,4 @@
-package yin.deng.dyutils.UiLayoutUtil;
+package yin.deng.dyutils.ui_Layout_util;
 
 import android.graphics.Color;
 import android.view.View;
@@ -10,10 +10,10 @@ import com.next.easynavigation.view.EasyNavigationBar;
 import java.util.List;
 
 import androidx.fragment.app.Fragment;
-import yin.deng.dyutils.base.SuperSuperBaseActivity;
+import yin.deng.dyutils.base.SuperBaseActivity;
 
 public class BottomNavigationUtils {
-    public static void initBottomUi(SuperSuperBaseActivity activity, EasyNavigationBar navigationBar, String[] tabText, int[] normalIcon, int[] selectIcon, List<Fragment> fragments){
+    public static void initBottomUi(SuperBaseActivity activity, EasyNavigationBar navigationBar, String[] tabText, int[] normalIcon, int[] selectIcon, List<Fragment> fragments){
         navigationBar.titleItems(tabText)      //必传  Tab文字集合
                 .normalIconItems(normalIcon)   //必传  Tab未选中图标集合
                 .selectIconItems(selectIcon)   //必传  Tab选中图标集合

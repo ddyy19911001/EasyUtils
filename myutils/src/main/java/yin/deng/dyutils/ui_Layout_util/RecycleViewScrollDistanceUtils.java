@@ -1,4 +1,4 @@
-package yin.deng.dyutils.UiLayoutUtil;
+package yin.deng.dyutils.ui_Layout_util;
 
 import android.view.View;
 

@@ -47,7 +47,7 @@ import yin.deng.dyutils.R;
 import yin.deng.dyutils.appUtil.AppActivityListManager;
 import yin.deng.dyutils.appUtil.AppExit2Back;
 import yin.deng.dyutils.base.fragment.SuperViewPagerSuperBaseFragment;
-import yin.deng.dyutils.dialogAndNitifycation.DialogUtils;
+import yin.deng.dyutils.dialog_notifycation.DialogUtils;
 import yin.deng.dyutils.http.BaseHttpInfo;
 import yin.deng.dyutils.http.MyHttpUtils;
 import yin.deng.dyutils.mzbanner.MZBannerView;
@@ -71,7 +71,7 @@ import yin.deng.dyutils.web.X5WebView;
  * Created by Administrator on 2018/4/12.
  * deng yin
  */
-public abstract class SuperSuperBaseActivity<T> extends AppCompatActivity implements SuperBaseConfig, OnRefreshListener, OnLoadmoreListener,PermissionListener {
+public abstract class SuperBaseActivity<T> extends AppCompatActivity implements SuperBaseConfig, OnRefreshListener, OnLoadmoreListener,PermissionListener {
     public X5WebView mWebView;
     public List<T> _infos = new ArrayList<>();
     public int _page;
@@ -146,7 +146,7 @@ public abstract class SuperSuperBaseActivity<T> extends AppCompatActivity implem
      *            申请结果监听事件
      */
     protected void requestRunTimePermission(String[] permissions,
-                                            SuperSuperBaseActivity listener) {
+                                            SuperBaseActivity listener) {
         PackageManager pkm = getPackageManager();
         // 用于存放为授权的权限
         List<String> permissionList = new ArrayList<>();
@@ -246,14 +246,14 @@ public abstract class SuperSuperBaseActivity<T> extends AppCompatActivity implem
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                PermissionPageUtils utils = new PermissionPageUtils(SuperSuperBaseActivity.this);
+                PermissionPageUtils utils = new PermissionPageUtils(SuperBaseActivity.this);
                 utils.jumpPermissionPage();
             }
         }, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dialog.dismiss();
-                DialogUtils.getInstance().showWarningTs(SuperSuperBaseActivity.this,"获取权限失败");
+                DialogUtils.getInstance().showWarningTs(SuperBaseActivity.this,"获取权限失败");
             }
         });
     }
@@ -344,7 +344,7 @@ public abstract class SuperSuperBaseActivity<T> extends AppCompatActivity implem
     }
 
     public SuperViewPagerSuperBaseFragment getCurrentFragment() {
-        FragmentManager fragmentManager = SuperSuperBaseActivity.this.getSupportFragmentManager();
+        FragmentManager fragmentManager = SuperBaseActivity.this.getSupportFragmentManager();
         List<Fragment> fragments = fragmentManager.getFragments();
         Fragment fg = null;
         if (fragments != null && fragments.size() > 0) {

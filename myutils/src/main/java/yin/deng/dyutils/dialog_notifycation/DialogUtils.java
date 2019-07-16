@@ -1,4 +1,4 @@
-package yin.deng.dyutils.dialogAndNitifycation;
+package yin.deng.dyutils.dialog_notifycation;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -20,7 +20,7 @@ import com.kongzue.dialog.v2.WaitDialog;
 import java.util.List;
 
 import yin.deng.dyutils.R;
-import yin.deng.dyutils.base.SuperSuperBaseActivity;
+import yin.deng.dyutils.base.SuperBaseActivity;
 
 public class DialogUtils {
     private static DialogUtils utils;
@@ -169,7 +169,7 @@ public class DialogUtils {
      * @param onMenuItemClickListener  菜单点击事件
      * @param isShowCancle  是否显示取消按钮
      */
-    public   void showBottomMenuDialog(SuperSuperBaseActivity context, String title, List<String> list, OnMenuItemClickListener onMenuItemClickListener, boolean isShowCancle) {
+    public   void showBottomMenuDialog(SuperBaseActivity context, String title, List<String> list, OnMenuItemClickListener onMenuItemClickListener, boolean isShowCancle) {
         if(list==null||list.isEmpty()){
             return;
         }

@@ -4,12 +4,12 @@ import android.Manifest;
 import android.view.View;
 import android.widget.TextView;
 
-import yin.deng.dyutils.base.SuperSuperBaseActivity;
+import yin.deng.dyutils.base.SuperBaseActivity;
 import yin.deng.dyutils.http.BaseHttpInfo;
 import yin.deng.dyutils.utils.LogUtils;
 import yin.deng.dyutils.utils.NoDoubleClickListener;
 
-public class MainActivity extends SuperSuperBaseActivity {
+public class MainActivity extends SuperBaseActivity {
 
 
     private TextView tvContent;

@@ -35,7 +35,6 @@ android {
 }
 
 
-
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
@@ -60,13 +59,14 @@ dependencies {
     api 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
     api 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
     //数据库
-    annotationProcessor  "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
+    annotationProcessor "com.github.Raizlabs.DBFlow:dbflow-processor:${dbflow_version}"
     api "com.github.Raizlabs.DBFlow:dbflow-core:${dbflow_version}"
     api "com.github.Raizlabs.DBFlow:dbflow:${dbflow_version}"
     api "com.github.Raizlabs.DBFlow:dbflow-sqlcipher:${dbflow_version}"
     //标签布局
     api 'com.zhy:flowlayout-lib:1.0.3'
     api 'com.zhousf.lib:okhttp3:2.9.8'
+    implementation files('libs/jsoup-1.8.1.jar')
 }
 
 

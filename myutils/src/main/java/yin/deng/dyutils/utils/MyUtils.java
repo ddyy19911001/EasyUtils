@@ -12,8 +12,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import yin.deng.dyutils.R;
 import yin.deng.dyutils.tips.ToastUtil;
@@ -38,11 +40,26 @@ public class MyUtils {
         return false;
     }
 
-    public static boolean isEmpty(List<Object> lists){
-        if(lists==null||lists.size()==0){
+    public static boolean isEmpty(Collection<?> lists){
+        if(lists==null||lists.isEmpty()){
             return true;
         }
         return false;
+    }
+
+    //判断Map是否为空
+    public static boolean isEmpty(Map<?, ?> map) {
+        return map == null || map.isEmpty();
+    }
+
+    //判断数组是否为空
+    public static boolean isEmpty(Object[] array) {
+        return array == null || array.length == 0;
+    }
+
+    //判断List是否为空
+    public static boolean isEmpty(List<Object> list) {
+        return list == null || list.size() == 0;
     }
 
 

@@ -7,7 +7,7 @@ import androidx.core.content.ContextCompat;
 import java.util.ArrayList;
 import java.util.List;
 
-import yin.deng.dyutils.base.SuperSuperBaseActivity;
+import yin.deng.dyutils.base.SuperBaseActivity;
 
 public class PermissionUtils {
 
@@ -19,7 +19,7 @@ public class PermissionUtils {
      *            申请结果监听事件
      */
     public static void requestRunTimePermission(String[] permissions,
-                                            SuperSuperBaseActivity listener) {
+                                            SuperBaseActivity listener) {
         if(permissions==null){
             LogUtils.e("权限列表为空");
             return;

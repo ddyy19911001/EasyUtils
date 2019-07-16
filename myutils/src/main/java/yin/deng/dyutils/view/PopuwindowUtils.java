@@ -13,19 +13,18 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import yin.deng.dyutils.R;
-import yin.deng.dyutils.base.SuperSuperBaseActivity;
+import yin.deng.dyutils.base.SuperBaseActivity;
 
 /**
  * Created by Administrator on 2017/10/12.
  * deng yin
  */
 public class PopuwindowUtils {
-    private SuperSuperBaseActivity mContext;
+    private SuperBaseActivity mContext;
     private PopupWindow popupWindow;
     private View contentView;
-    private ViewHolder holder;
 
-    public PopuwindowUtils(SuperSuperBaseActivity mContext) {
+    public PopuwindowUtils(SuperBaseActivity mContext) {
         this.mContext = mContext;
     }
 
@@ -34,29 +33,13 @@ public class PopuwindowUtils {
         return contentView;
     }
 
-    public void showPopupWindow(View view) {
+    public void createPopupLayout(int layoutRes) {
         // 一个自定义的布局，作为显示的内容
         contentView = LayoutInflater.from(mContext).inflate(
-                R.layout.popwindow_layout, null);
+                layoutRes, null);
         popupWindow = new PopupWindow(contentView,
                 ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
         popupWindow.setTouchable(true);
-        holder=new ViewHolder(contentView);
-        holder.ll1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mContext.showTs("点击第一个");
-                dismissPop();
-            }
-        });
-        holder.ll2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mContext.showTs("点击第二个");
-                dismissPop();
-            }
-        });
-
         //在PopupWindow里面就加上下面代码，让键盘弹出时，不会挡住pop窗口。
         popupWindow.setInputMethodMode(PopupWindow.INPUT_METHOD_NEEDED);
         popupWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
@@ -85,8 +68,11 @@ public class PopuwindowUtils {
             }
         });
         backgroundAlpha(0.5f);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            popupWindow.showAsDropDown(view, -20, 0, Gravity.RIGHT);
+    }
+
+    public void showPopWindow(View view,int xOffset,int yOffset,int Gravity){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT&&popupWindow!=null) {
+            popupWindow.showAsDropDown(view, xOffset, yOffset, Gravity);
         }
     }
 
@@ -107,30 +93,6 @@ public class PopuwindowUtils {
         if (popupWindow != null) {
             popupWindow.dismiss();
             popupWindow = null;
-        }
-    }
-
-    static class ViewHolder {
-        ImageView iv1;
-        TextView tv1;
-        LinearLayout ll1;
-        ImageView iv2;
-        TextView tv2;
-        LinearLayout ll2;
-        ImageView iv3;
-        TextView tv3;
-        LinearLayout ll3;
-
-        ViewHolder(View view) {
-            iv1=view.findViewById(R.id.iv1);
-            iv2=view.findViewById(R.id.iv2);
-            iv3=view.findViewById(R.id.iv3);
-            tv1=view.findViewById(R.id.tv1);
-            tv2=view.findViewById(R.id.tv2);
-            tv3=view.findViewById(R.id.tv3);
-            ll1=view.findViewById(R.id.ll1);
-            ll2=view.findViewById(R.id.ll2);
-            ll3=view.findViewById(R.id.ll3);
         }
     }
 }
