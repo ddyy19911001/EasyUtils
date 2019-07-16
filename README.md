@@ -23,7 +23,7 @@ Add it in your root build.gradle at the end of repositories:
 # Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.ddyy19911001:EasyUtils:1.0'
+	        implementation 'com.github.ddyy19911001:EasyUtils:1.0.2'
 	}
 # Step 3. add bottom in gradle.properties
 
