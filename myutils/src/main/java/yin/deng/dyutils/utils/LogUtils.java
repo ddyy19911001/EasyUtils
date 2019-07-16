@@ -39,6 +39,12 @@ public class LogUtils {
     public static boolean allowW = true;
     public static boolean allowWtf = true;
 
+    public static int typeD = 0;
+    public static int typeE = 1;
+    public static int typeI = 2;
+    public static int typeV = 3;
+    public static int typeW = 4;
+    public static int typeWtf = 5;
     private static String generateTag(StackTraceElement caller) {
         String tag = "%s.%s(输出Line:%d)"; // 占位符
         String callerClazzName = caller.getClassName(); // 获取到类名
@@ -50,6 +56,67 @@ public class LogUtils {
                 + tag;
         return tag;
     }
+
+    /**
+     * 截断输出日志
+     * @param msg
+     */
+    public static void LoglongData(String tag, String msg,int type) {
+        if (tag == null || tag.length() == 0
+                || msg == null || msg.length() == 0)
+            return;
+
+        int segmentSize = 3 * 1024;
+        long length = msg.length();
+        if (length <= segmentSize ) {// 长度小于等于限制直接打印
+            if(type==typeD){
+                Log.d(tag, msg);
+            }else if(type==typeE){
+                Log.e(tag, msg);
+            }else if(type==typeV){
+                Log.v(tag, msg);
+            }else if(type==typeI){
+                Log.v(tag, msg);
+            }else if(type==typeW){
+                Log.w(tag, msg);
+            }else{
+                Log.e(tag, msg);
+            }
+        }else {
+            while (msg.length() > segmentSize ) {// 循环分段打印日志
+                String logContent = msg.substring(0, segmentSize );
+                msg = msg.replace(logContent, "");
+                if(type==typeD){
+                    Log.d(tag, msg);
+                }else if(type==typeE){
+                    Log.e(tag, msg);
+                }else if(type==typeV){
+                    Log.v(tag, msg);
+                }else if(type==typeI){
+                    Log.v(tag, msg);
+                }else if(type==typeW){
+                    Log.w(tag, msg);
+                }else{
+                    Log.e(tag, msg);
+                }
+            }
+            if(type==typeD){
+                Log.d(tag, msg);
+            }else if(type==typeE){
+                Log.e(tag, msg);
+            }else if(type==typeV){
+                Log.v(tag, msg);
+            }else if(type==typeI){
+                Log.v(tag, msg);
+            }else if(type==typeW){
+                Log.w(tag, msg);
+            }else{
+                Log.e(tag, msg);
+            }
+        }
+    }
+
+
 
     /**
      * 自定义的logger
@@ -95,7 +162,7 @@ public class LogUtils {
         if (customLogger != null) {
             customLogger.d(tag, content);
         } else {
-            Log.d(tag, content);
+            LoglongData(tag,content,typeD);
         }
     }
 
@@ -121,7 +188,7 @@ public class LogUtils {
         if (customLogger != null) {
             customLogger.e(tag, content);
         } else {
-            Log.e(tag, content);
+            LoglongData(tag,content,typeE);
         }
         if (isSaveLog) {
             point(PATH_LOG_INFO, tag, content);
@@ -153,7 +220,7 @@ public class LogUtils {
         if (customLogger != null) {
             customLogger.i(tag, content);
         } else {
-            Log.i(tag, content);
+            LoglongData(tag,content,typeI);
         }
 
     }
@@ -181,7 +248,7 @@ public class LogUtils {
         if (customLogger != null) {
             customLogger.v(tag, content);
         } else {
-            Log.v(tag, content);
+            LoglongData(tag,content,typeV);
         }
     }
 
@@ -207,7 +274,7 @@ public class LogUtils {
         if (customLogger != null) {
             customLogger.w(tag, content);
         } else {
-            Log.w(tag, content);
+            LoglongData(tag,content,typeW);
         }
     }
 

@@ -4,8 +4,11 @@ import android.Manifest;
 import android.view.View;
 import android.widget.TextView;
 
+import org.jsoup.nodes.Document;
+
 import yin.deng.dyutils.base.SuperBaseActivity;
 import yin.deng.dyutils.http.BaseHttpInfo;
+import yin.deng.dyutils.http.JsoupUtils;
 import yin.deng.dyutils.utils.LogUtils;
 import yin.deng.dyutils.utils.NoDoubleClickListener;
 
@@ -29,6 +32,18 @@ public class MainActivity extends SuperBaseActivity {
         initView();
         String []permisions={Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE};
         requestRunTimePermission(permisions,this);
+        JsoupUtils.getHtmlDoctmentNoParams(this, "https://download.csdn.net/download/czxttkl/5411175", new JsoupUtils.OnDataGetListener() {
+            @Override
+            public void onGetData(Document data) {
+                showTs("获取到数据了");
+                LogUtils.i("data："+data);
+            }
+
+            @Override
+            public void onErro(String erro) {
+                showTs("获取数据失败了："+erro);
+            }
+        });
     }
 
 
