@@ -1,5 +1,7 @@
 # EasyUtils
+
 适用于andoirdx版本的开发工具utils
+
 # 如何使用
 
 To get a Git project into your build:
@@ -25,8 +27,8 @@ Add it in your root build.gradle at the end of repositories:
 	}
 # Step 3. add bottom in gradle.properties
 
-android.useAndroidX=true
-android.enableJetifier=true
+	android.useAndroidX=true
+	android.enableJetifier=true
 
 # Step 4. add these in main project's build.gradle
 
