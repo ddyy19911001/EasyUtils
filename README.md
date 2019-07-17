@@ -35,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
 	android{
 	....
 	defaultConfig {
-        ndk { abiFilters "armeabi" }
+        ndk{abiFilters "armeabi", "armeabi-v7a", "x86", "mips"}
         //注意添加到主项目的gradle设置中
         //图片选择框架需要添加这两句
         javaCompileOptions {
@@ -119,3 +119,26 @@ CircleImageView显示圆形图片
 
 JsoupUtils可以直接获取到Doctment
 
+# 如果要用到refreshHeader可以设置静态默认的header
+
+ 	 static {
+       	 //设置全局的Header构建器
+      	 SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
+            @Override
+            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
+                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
+                MyHeaderView head = new MyHeaderView(context);
+                return head;//指定为经典Header，默认是 贝塞尔雷达Header
+            }
+    	    });
+   	   //设置全局的Footer构建器
+     	   SmartRefreshLayout.setDefaultRefreshFooterCreater(new DefaultRefreshFooterCreater() {
+            @Override
+            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
+                //指定为经典Footer，默认是 BallPulseFooter
+                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
+                MyFooterView footer = new MyFooterView(context);
+                return footer;
+      	      }
+      	  });
+   	  }
