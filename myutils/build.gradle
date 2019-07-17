@@ -38,17 +38,17 @@ android {
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     testImplementation 'junit:junit:4.12'
-    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
-    implementation 'com.squareup.picasso:picasso:2.5.2'
+    api 'androidx.appcompat:appcompat:1.0.0-beta01'
+    api 'com.squareup.picasso:picasso:2.5.2'
     //eventbus
     implementation 'org.greenrobot:eventbus:3.0.0'
     //网络请求解析对象
     implementation 'com.google.code.gson:gson:2.5+'
     //gif图片加载
-    implementation 'com.github.Cutta:GifView:1.1'
+    api 'com.github.Cutta:GifView:1.1'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
-    implementation 'com.google.android.material:material:1.0.0-beta01'
-    implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    api 'com.google.android.material:material:1.0.0-beta01'
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     api 'com.kongzue.dialog:dialog:2.4.8'
     api files('libs/BASE64Decoder.jar')
     //底部导航快速使用
