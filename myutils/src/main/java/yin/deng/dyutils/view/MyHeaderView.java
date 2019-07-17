@@ -25,8 +25,8 @@ import yin.deng.dyutils.refresh.constant.SpinnerStyle;
  */
 public class MyHeaderView extends LinearLayout implements RefreshHeader {
     private static final String L = "MyTag";
-    private GifView gifView;
-    private View view;
+    public GifView gifView;
+    public View view;
     public MyHeaderView(Context context) {
         super(context);
         setGravity(Gravity.CENTER_HORIZONTAL);
@@ -35,6 +35,18 @@ public class MyHeaderView extends LinearLayout implements RefreshHeader {
         gifView.pause();//暂停动画
         gifView.setGifResource(R.drawable.g);
         addView(view);
+    }
+
+    public MyHeaderView(Context context,View customView,GifView gifView) {
+        super(context);
+        if(customView==null||gifView==null){
+            throw new NullPointerException("view can not be null on create MyHeadView");
+        }
+        this.view=customView;
+        this.gifView=gifView;
+        setGravity(Gravity.CENTER_HORIZONTAL);
+        gifView.pause();//暂停动画
+        addView(customView);
     }
 
     public MyHeaderView(Context context, @Nullable AttributeSet attrs) {

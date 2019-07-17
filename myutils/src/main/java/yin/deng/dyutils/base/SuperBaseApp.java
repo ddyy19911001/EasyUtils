@@ -153,26 +153,26 @@ public class SuperBaseApp extends Application {
     }
 
     //static 代码段可以防止内存泄露
-    static {
-        //设置全局的Header构建器
-        SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
-            @Override
-            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
-                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
-                MyHeaderView head = new MyHeaderView(context);
-                return head;//指定为经典Header，默认是 贝塞尔雷达Header
-            }
-        });
-        //设置全局的Footer构建器
-        SmartRefreshLayout.setDefaultRefreshFooterCreater(new DefaultRefreshFooterCreater() {
-            @Override
-            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
-                //指定为经典Footer，默认是 BallPulseFooter
-                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
-                MyFooterView footer = new MyFooterView(context);
-                return footer;
-            }
-        });
-    }
+//    static {
+//        //设置全局的Header构建器
+//        SmartRefreshLayout.setDefaultRefreshHeaderCreater(new DefaultRefreshHeaderCreater() {
+//            @Override
+//            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
+//                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
+//                MyHeaderView head = new MyHeaderView(context);
+//                return head;//指定为经典Header，默认是 贝塞尔雷达Header
+//            }
+//        });
+//        //设置全局的Footer构建器
+//        SmartRefreshLayout.setDefaultRefreshFooterCreater(new DefaultRefreshFooterCreater() {
+//            @Override
+//            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
+//                //指定为经典Footer，默认是 BallPulseFooter
+//                layout.setPrimaryColorsId(R.color.normal_bg, R.color.normal_4a);//全局设置主题颜色
+//                MyFooterView footer = new MyFooterView(context);
+//                return footer;
+//            }
+//        });
+//    }
 
 }

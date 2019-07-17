@@ -26,10 +26,10 @@ import yin.deng.dyutils.refresh.constant.SpinnerStyle;
  */
 public class MyFooterView extends LinearLayout implements RefreshFooter {
     private static final String L = "MyTag";
-    private  TextView headText;
-    private  View footerText;
-    private GifView gifView;
-    private View view;
+    public TextView headText;
+    public View footerText;
+    public GifView gifView;
+    public View view;
     //数据是否已经完全加载
     private boolean isFinished=false;
     public MyFooterView(Context context) {
@@ -44,6 +44,20 @@ public class MyFooterView extends LinearLayout implements RefreshFooter {
         gifView.pause();//暂停动画
         gifView.setGifResource(R.drawable.bottom);
         headText.setVisibility(GONE);
+        addView(view);
+    }
+
+    public MyFooterView(Context context,View customView,GifView gifView,TextView headText,View footerText) {
+        super(context);
+        setGravity(Gravity.CENTER_HORIZONTAL);
+        //自定义下部显示控件
+        this.view=customView;
+        this.gifView=gifView;
+        this.headText=headText;
+        this.footerText=footerText;
+        this.footerText.setVisibility(GONE);
+        this.gifView.pause();//暂停动画
+        this.headText.setVisibility(GONE);
         addView(view);
     }
 

@@ -8,7 +8,7 @@ android {
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
-        ndk { abiFilters "armeabi" }
+        ndk{abiFilters "armeabi", "armeabi-v7a", "x86", "mips"}
         //注意添加到主项目的gradle设置中
         //图片选择框架需要添加这两句
         javaCompileOptions {
@@ -48,13 +48,12 @@ dependencies {
     implementation 'com.github.Cutta:GifView:1.1'
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
     implementation 'com.google.android.material:material:1.0.0-beta01'
-    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1020_43633_sharewithdownload_withoutGame_obfs_20190111_105200.jar')
     implementation 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
     api 'com.kongzue.dialog:dialog:2.4.8'
-    implementation files('libs/BASE64Decoder.jar')
+    api files('libs/BASE64Decoder.jar')
     //底部导航快速使用
     api 'com.github.forvv231:EasyNavigation:1.0.2'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
     //新增tablayout框架布局
     api 'com.ogaclejapan.smarttablayout:library:2.0.0@aar'
     api 'com.ogaclejapan.smarttablayout:utils-v4:2.0.0@aar'
@@ -66,6 +65,7 @@ dependencies {
     //标签布局
     api 'com.zhy:flowlayout-lib:1.0.3'
     api 'com.zhousf.lib:okhttp3:2.9.8'
+    api files('libs/tbs_sdk_thirdapp_v4.3.0.1072_43646_sharewithdownloadwithfile_withoutGame_obfs_20190429_175122.jar')
 }
 
 
