@@ -1,6 +1,5 @@
 package yin.deng.dyutils.http;
 
-import com.raizlabs.android.dbflow.structure.BaseModel;
 
 import java.io.Serializable;
 import java.util.HashMap;
@@ -9,7 +8,7 @@ import java.util.Map;
 /**
  * Created by Administrator on 2019/3/29 0029.
  */
-public class BaseHttpInfo extends BaseModel implements Serializable {
+public class BaseHttpInfo  implements Serializable {
     private String _baseRequestUrl;
     private Map<String,String> _baseMapParams=new HashMap<>();
 
