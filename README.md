@@ -35,7 +35,7 @@ Add it in your root build.gradle at the end of repositories:
 	android{
 	....
 	defaultConfig {
-        ndk { abiFilters "armeabi" }
+        ndk{abiFilters "armeabi", "armeabi-v7a", "x86", "mips"}
         //注意添加到主项目的gradle设置中
         //图片选择框架需要添加这两句
         javaCompileOptions {
