@@ -13,17 +13,17 @@
         >
         <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:visibility="visible"
-            custom:gif="@drawable/g" />
+            custom:gif="@drawable/load" />
         <TextView
             android:id="@+id/tv_head_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
             android:text="正在加载..."
-            android:layout_marginLeft="2dp"
+            android:layout_marginLeft="5dp"
             />
     </LinearLayout>
 

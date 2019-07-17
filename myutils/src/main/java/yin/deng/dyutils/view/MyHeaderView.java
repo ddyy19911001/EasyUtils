@@ -33,7 +33,7 @@ public class MyHeaderView extends LinearLayout implements RefreshHeader {
         view=View.inflate(context, R.layout.head_animate_view,null);
         gifView=view.findViewById(R.id.gif);
         gifView.pause();//暂停动画
-        gifView.setGifResource(R.drawable.g);
+        gifView.setGifResource(R.drawable.load);
         addView(view);
     }
 

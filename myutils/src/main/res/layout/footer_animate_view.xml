@@ -14,9 +14,9 @@
         <com.cunoraz.gifview.library.GifView
             android:id="@+id/gif"
             android:layout_width="wrap_content"
-            android:layout_height="62dp"
+            android:layout_height="65dp"
             android:visibility="visible"
-            custom:gif="@drawable/g" />
+            custom:gif="@drawable/bottom" />
         <TextView
             android:id="@+id/tv_head_text"
             android:layout_width="wrap_content"
