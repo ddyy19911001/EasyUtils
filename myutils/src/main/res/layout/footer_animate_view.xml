@@ -4,7 +4,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
-        android:id="@+id/ll_foot_root"
+        android:id="@+id/ll_foot_load"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
         android:gravity="center"
@@ -16,7 +16,7 @@
             android:layout_width="wrap_content"
             android:layout_height="65dp"
             android:visibility="visible"
-            custom:gif="@drawable/bottom" />
+            custom:gif="@drawable/bottom_load" />
         <TextView
             android:id="@+id/tv_head_text"
             android:layout_width="wrap_content"
@@ -29,7 +29,7 @@
 
 
     <LinearLayout
-        android:id="@+id/ll_footer"
+        android:id="@+id/ll_foot_no_more"
         android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             android:id="@+id/tv_footer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- 我是有底线的 -"
+            android:text="没有更多内容了"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             />

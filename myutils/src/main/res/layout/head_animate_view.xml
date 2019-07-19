@@ -22,7 +22,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:text="正在加载..."
+            android:text="正在刷新..."
             android:layout_marginLeft="5dp"
             />
     </LinearLayout>
@@ -39,7 +39,7 @@
             android:id="@+id/tv_footer_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="- 我是有底线的 -"
+            android:text="没有更多内容了"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="10dp"
             />

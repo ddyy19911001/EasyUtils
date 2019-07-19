@@ -26,8 +26,9 @@ import yin.deng.dyutils.refresh.constant.SpinnerStyle;
  */
 public class MyFooterView extends LinearLayout implements RefreshFooter {
     private static final String L = "MyTag";
+    private  View footerRoot;
     public TextView headText;
-    public View footerText;
+    public View footerNoMoreLayout;
     public GifView gifView;
     public View view;
     //数据是否已经完全加载
@@ -39,10 +40,12 @@ public class MyFooterView extends LinearLayout implements RefreshFooter {
         view=View.inflate(context, R.layout.footer_animate_view,null);
         gifView=view.findViewById(R.id.gif);
         headText=view.findViewById(R.id.tv_head_text);
-        footerText=view.findViewById(R.id.ll_footer);
-        footerText.setVisibility(GONE);
+        footerNoMoreLayout =view.findViewById(R.id.ll_foot_no_more);
+        footerRoot=view.findViewById(R.id.ll_foot_load);
+        footerNoMoreLayout.setVisibility(GONE);
+        Log.d("footer","隐藏footer");
         gifView.pause();//暂停动画
-        gifView.setGifResource(R.drawable.bottom);
+        gifView.setGifResource(R.drawable.bottom_load);
         headText.setVisibility(GONE);
         addView(view);
     }
@@ -54,8 +57,8 @@ public class MyFooterView extends LinearLayout implements RefreshFooter {
         this.view=customView;
         this.gifView=gifView;
         this.headText=headText;
-        this.footerText=footerText;
-        this.footerText.setVisibility(GONE);
+        this.footerNoMoreLayout =footerText;
+        this.footerNoMoreLayout.setVisibility(GONE);
         this.gifView.pause();//暂停动画
         this.headText.setVisibility(GONE);
         addView(view);
@@ -143,8 +146,9 @@ public class MyFooterView extends LinearLayout implements RefreshFooter {
                     break;
                 case Refreshing:
                     Log.i(L, "正在刷新");
-                    if (footerText != null && footerText.getVisibility() == VISIBLE) {
-                        footerText.setVisibility(GONE);
+                    if (footerNoMoreLayout != null && footerNoMoreLayout.getVisibility() == VISIBLE) {
+                        footerNoMoreLayout.setVisibility(GONE);
+                        footerRoot.setVisibility(VISIBLE);
                     }
                     break;
                 case ReleaseToRefresh:
@@ -169,9 +173,11 @@ public class MyFooterView extends LinearLayout implements RefreshFooter {
     public boolean setLoadmoreFinished(boolean finished) {
         this.isFinished=finished;
         if(finished) {
-            footerText.setVisibility(VISIBLE);
+            footerNoMoreLayout.setVisibility(VISIBLE);
+            footerRoot.setVisibility(GONE);
         }else{
-            footerText.setVisibility(GONE);
+            footerNoMoreLayout.setVisibility(GONE);
+            footerRoot.setVisibility(VISIBLE);
         }
         return finished;
     }
